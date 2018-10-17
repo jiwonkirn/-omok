@@ -1,5 +1,3 @@
 # -omok
 
-## 오목게임입니다.
-
-2018.10.16 오목 번갈아 두는 동작까지 완성
+[오목게임](https://jiwonkirn.github.io/-omok/)

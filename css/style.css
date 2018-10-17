@@ -19,36 +19,83 @@ h2 {
   content: "";
 }
 
-.black-win {
+.black-win, .white-win{
+  position: absolute;
   width: 100%;
   height: 100%;
-  position: absolute;
-  background-color: rgba(37,32,28,0.6);
   z-index: 9999;
-
-  color: rgba(255,255,255,0.8);
-  font-weight: 400;
+  
   letter-spacing: 5px;
+  font-weight: 400;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
+  /* opacity: 0; */
   display: none;
+  transition: all 0.2s ease-in;
+}
+
+.black-win {
+  background-color: rgba(37,32,28,0.8);
+  color: rgba(255,255,255,0.8);
+}
+
+.white-win {
+  background-color: rgba(255,255,255,0.8);
+  color: #333;
 }
 
 .win-content {
   text-align: center;
 }
 
+@keyframes fade-in{
+  0%{
+      opacity: 0;
+  }
+  100%{
+      opacity: 1;
+  }
+}
+
+.show-win {
+  display: flex;
+  animation-name: fade-in;
+  animation-duration: 0.4s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+
 .restart-btn {
     font-size: 14px;
     font-family: "Nanum Myeongjo", serif;
-    color: #fff;
     width: 75px;
     height: 30px;
     background-color: transparent;
     margin-top: 10px;
+
+    transition: all 0.15s ease-in-out;
+}
+
+.white-win .restart-btn {
+  border: 1px solid rgba(37,32,28,0.4);
+}
+
+.black-win .restart-btn {
+  color: rgba(255,255,255,0.8);
+  border: 1px solid rgba(255,255,255,0.6);
+}
+
+.black-win .restart-btn:hover {
+  color: rgba(37,32,28,0.8);
+  background-color: rgba(255,255,255,0.8);
+}
+
+.white-win .restart-btn:hover {
+  color: rgba(255,255,255,0.8);
+  background-color: rgba(37,32,28,0.8);
 }
 
 .board {

@@ -1,4 +1,14 @@
+/* 인코딩 방식을 선언한다. */
+@charset 'utf-8';
+
+/* 폰트 IMPORT */
 @import url('https://fonts.googleapis.com/css?family=Nanum+Myeongjo:400,700|Noto+Sans+KR:300');
+
+
+
+/* ========================
+    아주 간단한 CSS RESET 
+========================= */
 
 * {
   margin: 0;
@@ -19,6 +29,12 @@ h2 {
   content: "";
 }
 
+
+
+/* =====================================
+    한 쪽 플레이어가 승리했을 때 출력되는 화면
+======================================== */
+
 .black-win, .white-win{
   position: absolute;
   width: 100%;
@@ -32,7 +48,6 @@ h2 {
   justify-content: center;
   align-items: center;
 
-  /* opacity: 0; */
   display: none;
   transition: all 0.2s ease-in;
 }
@@ -96,6 +111,20 @@ h2 {
 .white-win .restart-btn:hover {
   color: rgba(255,255,255,0.8);
   background-color: rgba(37,32,28,0.8);
+}
+
+
+
+/* =================
+    오목판 스타일링
+================== */
+
+.container {
+  width: 680px;
+  margin: 10% auto;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
 }
 
 .board {
@@ -171,6 +200,10 @@ h2 {
   box-sizing: border-box;
 }
 
+.row-1 .col__grid::after {
+  border-right: 1px solid transparent;
+}
+
 .col__grid::before {
   display: block;
   content: "";
@@ -208,13 +241,11 @@ h2 {
   border-right: none;
 }
 
-.container {
-    width: 680px;
-    margin: 10% auto;
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-  }
+
+
+/* ==========================
+    오른쪽 정보 창 스타일링(제목)
+=========================== */
 
 .side-container {
     align-self: center;
@@ -244,6 +275,11 @@ h2 {
   color: #888;
   text-shadow: none;
 }
+
+
+/* ==================================
+    오른쪽 정보 창 스타일링(Whose turn)
+==================================== */
 
 .turn {
   font-size: 18px;
@@ -288,6 +324,11 @@ h2 {
     background-color: #fff;
     color: #333;
 }
+
+
+/* ========
+    푸터
+========== */
 
 footer {
     text-align: center;

@@ -5,7 +5,7 @@
 const blackWin = document.querySelector('.black-win')
 const whiteWin = document.querySelector('.white-win')
 const whoseTurn = document.querySelector('.player-turn')
-const restartButton = document.querySelector('.restart-btn')
+const restartButton = document.querySelectorAll('.restart-btn')
 
 const omokRowSelectors = document.querySelectorAll('.row')
 
